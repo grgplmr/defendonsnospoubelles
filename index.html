@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Défendons nos poubelles - Mobilisation contre la réforme Smicval</title>
+    <meta name="description" content="Mobilisation citoyenne contre la suppression de la collecte porte-à-porte par le Smicval en Haute Gironde. 88 communes s'opposent à cette réforme discriminatoire.">
+    <meta name="keywords" content="Smicval, collecte déchets, porte-à-porte, Haute Gironde, mobilisation, pétition, PAV, points apport volontaire">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Défendons nos poubelles - Mobilisation contre la réforme Smicval">
+    <meta property="og:description" content="88 communes s'opposent à la suppression de la collecte porte-à-porte. Rejoignez la mobilisation !">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://defendonsnospoubelles.fr">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗑️</text></svg>">
+    
+    <style>
+        /* Reset et base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #f8f9fa;
+            color: #e74c3c;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+        }
+
+        .btn-secondary:hover {
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-warning {
+            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+        }
+
+        .btn-warning:hover {
+            box-shadow: 0 5px 15px rgba(149, 165, 166, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #f39c12;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        /* Video Section */
+        .video-section {
+            background: white;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Grid spéciale pour "Pourquoi nous nous mobilisons" */
+        .mobilization-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .centered-card {
+            grid-column: 1 / -1;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Carrousel de témoignages */
+        .testimonials-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .testimonials-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            background: white;
+            padding: 3rem;
+            text-align: center;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .testimonial-text {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #e74c3c;
+            font-size: 1.1rem;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #c0392b;
+            transform: scale(1.1);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background: #e74c3c;
+            transform: scale(1.2);
+        }
+
+        /* News */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .news-meta {
+            background: #e74c3c;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-content h3 {
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .news-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        .newsletter h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .newsletter .btn {
+            background: white;
+            color: #27ae60;
+            font-weight: 600;
+        }
+
+        .newsletter .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ecf0f1;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #bdc3c7;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        .footer-section a:hover {
+            color: #e74c3c;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #95a5a6;
+        }
+
+        /* CTA flottant */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mobilization-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .testimonial {
+                padding: 2rem 1.5rem;
+            }
+
+            .testimonial-text {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Accessibilité */
+        .nav-links a:focus,
+        .btn:focus,
+        .carousel-btn:focus,
+        .indicator:focus {
+            outline: 3px solid #3498db;
+            outline-offset: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card,
+        .news-card,
+        .testimonial {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">🗑️ Défendons nos poubelles</div>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#reforme">La réforme</a></li>
+                    <li><a href="#impacts">Impacts</a></li>
+                    <li><a href="#actions">Actions</a></li>
+                    <li><a href="#actualites">Actualités</a></li>
+                </ul>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6nTjfP8_LqyLvk0JCnHOxAAdWP9al2vbN0ce1bakKMk7UYQ/viewform" target="_blank" class="btn">Remplissez le questionnaire</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="accueil">
+            <div class="container">
+                <h1>Défendons nos poubelles</h1>
+                <p>Le Smicval supprime la collecte porte-à-porte dans 137 communes de Haute Gironde. 88 communes s'opposent à cette réforme qui pénalise les habitants. Rejoignez la mobilisation !</p>
+                
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">1,247</span>
+                        <span class="stat-label">signatures</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">88</span>
+                        <span class="stat-label">communes opposées</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">137</span>
+                        <span class="stat-label">communes concernées</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section video-section">
+            <div class="container">
+                <h2>La réforme expliquée en 3 minutes</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+    <iframe
+      src="https://www.youtube.com/embed/OPuJsWxHqFM"
+      title="YouTube video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    ></iframe>
+  </div>
+</div>
+            </div>
+        </section>
+
+        <section class="section" id="reforme">
+            <div class="container">
+                <h2>Comprendre la réforme</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="icon">🗑️</div>
+                        <h3>Avant : Collecte porte-à-porte</h3>
+                        <p>Vos poubelles étaient ramassées devant chez vous selon un calendrier fixe. Simple et accessible à tous.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">🚶</div>
+                        <h3>Maintenant : Points d'apport volontaire</h3>
+                        <p>Vous devez porter vos déchets dans des conteneurs collectifs, parfois à plusieurs kilomètres de chez vous.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">⚖️</div>
+                        <h3>Notre combat : Égalité de service</h3>
+                        <p>Nous exigeons le maintien d'un service public accessible à tous, sans discrimination.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="impacts">
+            <div class="container">
+                <h2>Pourquoi nous nous mobilisons</h2>
+                <div class="mobilization-grid">
+                    <div class="card">
+                        <div class="icon">🚫</div>
+                        <h3>Absence de concertation</h3>
+                        <p>La réforme a été imposée sans consultation sérieuse des habitants concernés.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">♿</div>
+                        <h3>Discrimination des personnes vulnérables</h3>
+                        <p>Seniors, personnes handicapées et habitants des zones rurales sont pénalisés.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">⚖️</div>
+                        <h3>Inégalité de service public</h3>
+                        <p>La qualité du service n'est plus équivalente pour tous les usagers.</p>
+                    </div>
+                </div>
+                <!-- Module "Majorité d'opposants" centré -->
+                <div class="centered-card">
+                    <div class="card">
+                        <div class="icon">🗳️</div>
+                        <h3>Majorité d'opposants</h3>
+                        <p>88 communes sur 137 s'opposent à cette réforme, soit 64% du territoire.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="actions">
+            <div class="container">
+                <h2>Nos actions</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="icon">📝</div>
+                        <h3>Remplissez le questionnaire</h3>
+                        <p>Ajoutez votre voix aux milliers de citoyens opposés aux PAV dans notre territoire.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6nTjfP8_LqyLvk0JCnHOxAAdWP9al2vbN0ce1bakKMk7UYQ/viewform" target="_blank" class="btn">Répondre au questionnaire</a>
+                    </div>
+                    <div class="card">
+                        <div class="icon">📘</div>
+                        <h3>Rejoignez la page Facebook</h3>
+                        <p>Suivez nous sur Facebook</p>
+                        <a href="https://www.facebook.com/groups/679202363835588" target="_blank" class="btn btn-secondary">Nous suivre</a>
+                    </div>
+                    <div class="card">
+                        <div class="icon">🎥</div>
+                        <h3>Rejoignez notre chaîne YouTube</h3>
+                        <p>Suivez nous sur YouTube</p>
+                        <a href="https://www.youtube.com/@touchepasamespoubelles" target="_blank" class="btn btn-warning">Nous suivre</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Témoignages d'habitants</h2>
+                <div class="testimonials-container">
+                    <div class="testimonials-track" id="testimonialsTrack">
+                        <div class="testimonial">
+                            <p class="testimonial-text">"À 82 ans, je ne peux plus porter mes poubelles jusqu'au point de collecte situé à 800 mètres de chez moi. Cette réforme nous abandonne."</p>
+                            <p class="testimonial-author"><strong>Marie D.</strong> - Cubnezais</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Avec ses ruelles en pente et son centre ancien classé, Bourg n'est pas fait pour accueillir des containers en pleine rue. En plus d'être inaccessibles pour les personnes âgées, ces PAV enlaidissent notre village touristique. C'est une atteinte à notre patrimoine."</p>
+                            <p class="testimonial-author"><strong>Karine</strong> - Bourg sur Gironde</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Avec mon arthrose, comment voulez-vous que je porte mes poubelles à 200 mètres de chez moi ? C'est une véritable punition pour les personnes âgées. On nous oublie."</p>
+                            <p class="testimonial-author"><strong>Martine, 72 ans</strong></p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"En centre-ville, la place manque déjà pour se garer. Installer des points d'apport volontaire supplémentaires, c'est retirer encore de la place aux clients. Ça va pénaliser les petits commerces comme le mien."</p>
+                            <p class="testimonial-author"><strong>Patrick, commerçant</strong> - Saint-André-de-Cubzac</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Je n'ai pas de voiture et le point de collecte est à plus d'un kilomètre. Transporter les sacs à pied, sous la pluie ou la chaleur, ce n'est pas possible. On complique la vie aux habitants des villages."</p>
+                            <p class="testimonial-author"><strong>Élise</strong> - Gauriac</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"J'habite seul et je marche difficilement. Les nouveaux containers sont beaucoup trop loin. Avant, je mettais mes sacs devant la porte, maintenant je dois demander de l'aide. Ce n'est pas digne."</p>
+                            <p class="testimonial-author"><strong>Jean</strong> - Blaye</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Avec une poussette et deux enfants à gérer, comment voulez-vous que je porte en plus les poubelles sur plusieurs centaines de mètres ? Ce système n'est pas adapté aux familles."</p>
+                            <p class="testimonial-author"><strong>Camille, maman de deux jeunes enfants</strong> - Cavignac</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Les nouveaux containers sont bien trop hauts pour moi, je n'arrive même pas à soulever le couvercle. On ne pense pas aux personnes qui ont des difficultés physiques."</p>
+                            <p class="testimonial-author"><strong>Françoise</strong> - Pugnac</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"J'ai une maladie chronique, je fatigue vite. Pourtant, sans carte d'invalidité, je n'ai pas droit aux collectes adaptées. On fait comme si seuls les handicapés officiels existaient."</p>
+                            <p class="testimonial-author"><strong>Michèle</strong> - Saint-Gervais</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Je vis en colocation sans voiture. Nos poubelles s'entassent, car le point de collecte est beaucoup trop loin à pied. Ce n'est pas écologique, ça pousse certains à abandonner leurs sacs au pied des PAV quand ils sont pleins."</p>
+                            <p class="testimonial-author"><strong>Lucie, étudiante</strong> - Saint-Savin</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"On parle de respect de l'environnement, mais les containers débordent souvent et attirent les nuisibles. Ça devient sale et dangereux, surtout pour les enfants."</p>
+                            <p class="testimonial-author"><strong>Jacques, retraité</strong> - Lansac</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Depuis la mise en place des PAV, il y a beaucoup plus de dépôts sauvages sur les chemins. Ce n'est pas ça, le progrès. On perd en qualité de vie."</p>
+                            <p class="testimonial-author"><strong>Anna</strong> - Salignac</p>
+                        </div>
+                        <div class="testimonial">
+                            <p class="testimonial-text">"Avec mes horaires décalés, il m'est impossible d'aller jusqu'au point d'apport en pleine nuit. Avant, je déposais ma poubelle en rentrant du travail. On ne pense pas à ceux qui travaillent en horaires atypiques."</p>
+                            <p class="testimonial-author"><strong>Céline, infirmière</strong> - Prignac-et-Marcamps</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">‹</button>
+                    <button class="carousel-btn" id="nextBtn">›</button>
+                </div>
+                
+                <div class="carousel-indicators" id="indicators"></div>
+            </div>
+        </section>
+
+        <section class="section" id="actualites">
+            <div class="container">
+                <h2>Dernières actualités</h2>
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="news-meta">18 décembre 2024 - Mobilisation</div>
+                        <div class="news-content">
+                            <h3><a href="#">100 élus mobilisés à Saint-Denis-de-Pile</a></h3>
+                            <p>Une centaine d'élus ont manifesté leur opposition lors du comité syndical du Smicval...</p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-meta">15 janvier 2025 - Juridique</div>
+                        <div class="news-content">
+                            <h3><a href="#">Victoire juridique à Toulouse</a></h3>
+                            <p>Le tribunal administratif annule une réforme similaire en Haute-Garonne...</p>
+                        </div>
+                    </article>
+                    <article class="news-card">
+                        <div class="news-meta">20 janvier 2025 - Pétition</div>
+                        <div class="news-content">
+                            <h3><a href="#">1000 signatures atteintes !</a></h3>
+                            <p>Notre pétition franchit le cap des 1000 signatures. Continuons la mobilisation...</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <div class="container">
+                <h2>Restez informé de la mobilisation</h2>
+                <p>Recevez les dernières actualités et les appels à action directement dans votre boîte mail.</p>
+                <a href="https://www.touchepasamespoubelles.fr/lettre-dinformation/" class="btn" target="_blank" rel="noopener noreferrer">
+  S'inscrire à la lettre d'information
+</a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Défendons nos poubelles</h3>
+                    <p>Collectif citoyen pour le maintien du service public de collecte des déchets en Haute Gironde.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <ul class="footer-links">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#reforme">La réforme</a></li>
+                        <li><a href="#actions">Actions</a></li>
+                        <li><a href="#actualites">Actualités</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><a href="mailto:contact@defendonsnospoubelles.fr">Contactez nous</a></p>
+                    <p>Téléphone : 05 XX XX XX XX</p>
+                    <p>Adresse : Haute Gironde, France</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Suivez-nous</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.facebook.com/groups/679202363835588" target="_blank">Facebook</a></li>
+                        <li><a href="https://www.youtube.com/@touchepasamespoubelles" target="_blank">YouTube</a></li>
+                        <li><a href="https://touchepasamespoubelles.fr" target="_blank">Touche pas à mes poubelles</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Défendons nos poubelles. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CTA flottant -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6nTjfP8_LqyLvk0JCnHOxAAdWP9al2vbN0ce1bakKMk7UYQ/viewform" target="_blank" class="floating-cta btn">📝 Remplissez le questionnaire</a>
+
+    <script>
+        // Carrousel de témoignages
+        class TestimonialsCarousel {
+            constructor() {
+                this.track = document.getElementById('testimonialsTrack');
+                this.prevBtn = document.getElementById('prevBtn');
+                this.nextBtn = document.getElementById('nextBtn');
+                this.indicatorsContainer = document.getElementById('indicators');
+                this.testimonials = this.track.children;
+                this.currentIndex = 0;
+                this.autoPlayInterval = null;
+                
+                this.init();
+            }
+            
+            init() {
+                this.createIndicators();
+                this.bindEvents();
+                this.startAutoPlay();
+                this.updateCarousel();
+            }
+            
+            createIndicators() {
+                for (let i = 0; i < this.testimonials.length; i++) {
+                    const indicator = document.createElement('div');
+                    indicator.className = 'indicator';
+                    indicator.addEventListener('click', () => this.goToSlide(i));
+                    this.indicatorsContainer.appendChild(indicator);
+                }
+            }
+            
+            bindEvents() {
+                this.prevBtn.addEventListener('click', () => this.prevSlide());
+                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                
+                // Pause auto-play on hover
+                this.track.addEventListener('mouseenter', () => this.stopAutoPlay());
+                this.track.addEventListener('mouseleave', () => this.startAutoPlay());
+            }
+            
+            updateCarousel() {
+                const translateX = -this.currentIndex * 100;
+                this.track.style.transform = `translateX(${translateX}%)`;
+                
+                // Update indicators
+                const indicators = this.indicatorsContainer.children;
+                for (let i = 0; i < indicators.length; i++) {
+                    indicators[i].classList.toggle('active', i === this.currentIndex);
+                }
+            }
+            
+            nextSlide() {
+                this.currentIndex = (this.currentIndex + 1) % this.testimonials.length;
+                this.updateCarousel();
+            }
+            
+            prevSlide() {
+                this.currentIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+                this.updateCarousel();
+            }
+            
+            goToSlide(index) {
+                this.currentIndex = index;
+                this.updateCarousel();
+            }
+            
+            startAutoPlay() {
+                this.stopAutoPlay();
+                this.autoPlayInterval = setInterval(() => this.nextSlide(), 5000);
+            }
+            
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+        }
+        
+        // Animation des compteurs
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.textContent.replace(/,/g, ''));
+                        let current = 0;
+                        const increment = target / 100;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                current = target;
+                                clearInterval(timer);
+                            }
+                            counter.textContent = Math.floor(current).toLocaleString();
+                        }, 20);
+                        observer.unobserve(counter);
+                    }
+                });
+            });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+        
+        // Navigation fluide
+        function smoothScroll() {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            new TestimonialsCarousel();
+            animateCounters();
+            smoothScroll();
+        });
+    </script>
+</body>
+</html>
+

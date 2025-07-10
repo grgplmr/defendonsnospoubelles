@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://defendonsnospoubelles.fr/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow important pages
+Allow: /
+Allow: /reforme-smicval/
+Allow: /impacts-population/
+Allow: /actions-collectif/
+Allow: /ressources-juridiques/
+Allow: /actualites/
+Allow: /blaye/
+Allow: /libourne/
+Allow: /saint-andre-de-cubzac/
+Allow: /coutras/
+Allow: /saint-savin/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
